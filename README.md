@@ -1,3 +1,42 @@
+Linux build
+===========
+
+This branch adds a native Linux version of Quick Find, preserving the original
+Hungarian notation, three-space indentation, brace style, and archive-searching
+command-line interface. The historical DOS, OS/2, and Windows source files remain
+intact. The original DOS makefile is now `Makefile.dos`.
+
+Build with CMake 3.20 or later and a C99 compiler. The tests require Python 3.9
+or later; use `-DBUILD_TESTING=OFF` to build without Python.
+
+```sh
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+ctest --test-dir build --output-on-failure
+
+./build/qf '*.c' ~/Projects
+./build/qf -i -cf '*.txt' ~/Downloads
+./build/qf --dos-match -co '*.DOC' ~/Archives
+./build/qf --formats
+./build/qf --help
+```
+
+Searches start in the current directory unless a directory is supplied. Quote
+wildcards. Linux options start with `-` or `--`; absolute directory paths are
+accepted without being mistaken for DOS switches. Matching preserves case by
+default; `-i` ignores ASCII case, and `--dos-match` selects the old DOS matching
+rules. Archive members are listed without extraction.
+
+Supported extensions are ARC, PAK, ZIP, ZOO, DWC, LZH, LZS, ARJ, CAB, RAR
+(RAR4 format), and TAR. TAR support covers uncompressed V7/USTAR, GNU long
+names, and PAX metadata. Use `--formats` to see format-specific limits.
+
+See [the Linux notes](DOC/LINUX.md) for behavior, archive limitations, development
+checks, and the layout of the new source files.
+
+Original project notes
+======================
+
 This is a program that I wrote about 37 years ago and was my first "Shareware" type of program.
 
 The really cool thing about this program is that this was the one I learned C with - and subsequently
@@ -25,12 +64,13 @@ Cool thing is, I made $10 off of all the hours that I put into this.   Yes, $10.
 UPDATE
 ======
 This now builds with the [OpenWatcom C Compiler](http://www.openwatcom.org/index.php/Downloads) for DOS.   The default
-makefile (Makefile) will build the DOS executable.
+makefile (`Makefile.dos` on this branch) will build the DOS executable.
 
 Building this software also requires the [A86 assembler](http://www.eji.com/a86/) by Eric Isaacson.  Install the software 
 in a directory that appears in your path.
  
-After installing the above and the the Watcom C compiler setting up your environment, just type <CODE>wmake</CODE>
+After installing the above and the Watcom C compiler and setting up your environment,
+type <CODE>wmake -f Makefile.dos</CODE>.
 
 
 

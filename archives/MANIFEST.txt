@@ -1,0 +1,14 @@
+bad/broken_arc.arc	18 bytes
+bad/broken_zip.zip	28 bytes
+bad/broken_zoo.zoo	18 bytes
+edge/basic_lha_needs_factory.lha	164 bytes
+edge/long_names_zip.zip	306 bytes
+edge/nested_zip.zip	374 bytes
+edge/oldver1_arc.arc	54 bytes
+good/basic_arc.arc	155 bytes
+good/basic_dwc.dwc	195 bytes
+good/basic_lzh.lzh	164 bytes
+good/basic_lzs.lzs	164 bytes
+good/basic_pak.pak	155 bytes
+good/basic_zip.zip	366 bytes
+good/basic_zoo.zoo	1783 bytes

@@ -1,0 +1,144 @@
+
+.
+   .                                      <DIR>      9:51 pm  May 24 2026 
+   expected_qf_v12_output.txt          5,752 bytes   9:50 pm  May 24 2026 
+   expected_qf_v14_output.txt              0 bytes   9:51 pm  May 24 2026 
+   manifest.txt                          425 bytes   9:50 pm  May 24 2026 
+   readme_qf_v14_validation.txt        1,297 bytes   9:51 pm  May 24 2026 
+   readme_qf_validation_set.txt        1,747 bytes   9:50 pm  May 24 2026 
+   bad                                    <DIR>      9:50 pm  May 24 2026 
+   edge                                   <DIR>      9:50 pm  May 24 2026 
+   good                                   <DIR>      9:50 pm  May 24 2026 
+   new_formats                            <DIR>      9:50 pm  May 24 2026 
+   new_formats_src                        <DIR>      9:50 pm  May 24 2026 
+   ----------------------------- -----------
+                              11       9,221 total bytes
+
+bad
+   broken_arc.arc                         18 bytes   9:50 pm  May 24 2026 
+   broken_zip.zip                         28 bytes   9:50 pm  May 24 2026 
+   broken_zoo.zoo                         18 bytes   9:50 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          64 total bytes
+
+edge
+   basic_lha_needs_factory.lha           164 bytes   9:50 pm  May 24 2026 
+   long_names_zip.zip                    306 bytes   9:50 pm  May 24 2026 
+   nested_zip.zip                        374 bytes   9:50 pm  May 24 2026 
+   oldver1_arc.arc                        54 bytes   9:50 pm  May 24 2026 
+   ----------------------------- -----------
+                               4         898 total bytes
+   BASIC_LHA_NEEDS_FACTORY.LHA           164 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        37 bytes  10:30 pm  May 24 2026 
+       *main.c                            29 bytes  10:30 pm  May 24 2026 
+       *empty.dat                          0 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          66 total bytes
+   LONG_NAMES_ZIP.ZIP                    306 bytes   9:50 pm  May 24 2026 
+       *filesystem_archive.go             21 bytes  10:30 pm  May 24 2026 
+       *qf-go-output-example.txt          21 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               2          42 total bytes
+   NESTED_ZIP.ZIP                        374 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        14 bytes  10:30 pm  May 24 2026 
+       *main.c                            14 bytes  10:30 pm  May 24 2026 
+       *wild.c                            16 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          44 total bytes
+   OLDVER1_ARC.ARC                        54 bytes   9:50 pm  May 24 2026 
+       *oldone.txt                        23 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               1          23 total bytes
+
+good
+   basic_arc.arc                         155 bytes   9:50 pm  May 24 2026 
+   basic_dwc.dwc                         195 bytes   9:50 pm  May 24 2026 
+   basic_lzh.lzh                         164 bytes   9:50 pm  May 24 2026 
+   basic_lzs.lzs                         164 bytes   9:50 pm  May 24 2026 
+   basic_pak.pak                         155 bytes   9:50 pm  May 24 2026 
+   basic_zip.zip                         366 bytes   9:50 pm  May 24 2026 
+   basic_zoo.zoo                       1,783 bytes   9:50 pm  May 24 2026 
+   ----------------------------- -----------
+                               7       2,982 total bytes
+   BASIC_ARC.ARC                         155 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        37 bytes  10:30 pm  May 24 2026 
+       *main.c                            29 bytes  10:30 pm  May 24 2026 
+       *empty.dat                          0 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          66 total bytes
+   BASIC_DWC.DWC                         195 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        37 bytes                        
+       *main.c                            29 bytes                        
+       *empty.dat                          0 bytes                        
+   ----------------------------- -----------
+                               3          66 total bytes
+   BASIC_LZH.LZH                         164 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        37 bytes  10:30 pm  May 24 2026 
+       *main.c                            29 bytes  10:30 pm  May 24 2026 
+       *empty.dat                          0 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          66 total bytes
+   BASIC_LZS.LZS                         164 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        37 bytes  10:30 pm  May 24 2026 
+       *main.c                            29 bytes  10:30 pm  May 24 2026 
+       *empty.dat                          0 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          66 total bytes
+   BASIC_PAK.PAK                         155 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        37 bytes  10:30 pm  May 24 2026 
+       *main.c                            29 bytes  10:30 pm  May 24 2026 
+       *empty.dat                          0 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          66 total bytes
+   BASIC_ZIP.ZIP                         366 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        37 bytes  10:30 pm  May 24 2026 
+       *main.c                            29 bytes  10:30 pm  May 24 2026 
+       *empty.dat                          0 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          66 total bytes
+   BASIC_ZOO.ZOO                       1,783 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        36 bytes  10:30 pm  May 24 2026 
+       *main.c                            28 bytes  10:30 pm  May 24 2026 
+   ----------------------------- -----------
+                               2          64 total bytes
+
+new_formats
+   basic_cab.cab                         122 bytes   9:50 pm  May 24 2026 
+   basic_tar.tar                      10,240 bytes   9:50 pm  May 24 2026 
+   ----------------------------- -----------
+                               2      10,362 total bytes
+   BASIC_CAB.CAB                         122 bytes   9:50 pm  May 24 2026 
+       *readme.txt                        37 bytes   9:21 am  Nov 24 2025 
+       *main.c                            29 bytes   9:21 am  Nov 24 2025 
+       *docs/qf.doc                        4 bytes   9:21 am  Nov 24 2025 
+   ----------------------------- -----------
+                               3          70 total bytes
+   BASIC_TAR.TAR                      10,240 bytes   9:50 pm  May 24 2026 
+       *readme.txt                         6 bytes   9:50 pm  May 24 2026 
+       *main.c                             5 bytes   9:50 pm  May 24 2026 
+       *docs/qf.doc                        4 bytes   9:50 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          15 total bytes
+
+new_formats_src
+   main.c                                  5 bytes   9:50 pm  May 24 2026 
+   readme.txt                              6 bytes   9:50 pm  May 24 2026 
+   docs                                   <DIR>      9:50 pm  May 24 2026 
+   ----------------------------- -----------
+                               3          11 total bytes
+
+new_formats_src/docs
+   qf.doc                                  4 bytes   9:50 pm  May 24 2026 
+   ----------------------------- -----------
+                               1           4 total bytes
+
+   ERROR reading archive: bad/broken_zip.zip
+       unexpected EOF
+   ERROR reading archive: bad/broken_zoo.zoo
+       bad ZOO header
+
+   ============================= -----------
+                              66      24,262 total files/bytes in all directories
+
+           7 directory(s) found.
+          59 file(s) found.

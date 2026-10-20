@@ -1,0 +1,4 @@
+*.o
+/qf
+/build*/
+__pycache__/
