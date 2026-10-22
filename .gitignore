@@ -2,3 +2,12 @@
 /qf
 /build*/
 __pycache__/
+
+# CMake output from an in-source build
+/CMakeCache.txt
+/CMakeFiles/
+/CTestTestfile.cmake
+/DartConfiguration.tcl
+/Makefile
+/Testing/
+/cmake_install.cmake

@@ -1,7 +1,7 @@
-Linux build
-===========
+Quickfind Linux
+===============
 
-This branch adds a native Linux version of Quick Find, preserving the original
+Quickfind Linux is the native Linux version of [Ron Bieber's Quick Find](https://github.com/rbieber/quickfind), preserving the original
 Hungarian notation, three-space indentation, brace style, and archive-searching
 command-line interface. The historical DOS, OS/2, and Windows source files remain
 intact. The original DOS makefile is now `Makefile.dos`.
@@ -34,6 +34,14 @@ names, and PAX metadata. Use `--formats` to see format-specific limits.
 See [the Linux notes](DOC/LINUX.md) for behavior, archive limitations, development
 checks, and the layout of the new source files.
 
+Provenance and attribution
+==========================
+
+Ron Bieber wrote the original Quick Find. Spock (OpenAI Codex) implemented the
+native Linux port, working with Ron's direction and review. The original Git
+history and historical platform sources are preserved in this independent
+repository; the original project remains at `rbieber/quickfind`.
+
 Original project notes
 ======================
 
@@ -64,7 +72,7 @@ Cool thing is, I made $10 off of all the hours that I put into this.   Yes, $10.
 UPDATE
 ======
 This now builds with the [OpenWatcom C Compiler](http://www.openwatcom.org/index.php/Downloads) for DOS.   The default
-makefile (`Makefile.dos` on this branch) will build the DOS executable.
+makefile (`Makefile.dos` in this repository) will build the DOS executable.
 
 Building this software also requires the [A86 assembler](http://www.eji.com/a86/) by Eric Isaacson.  Install the software 
 in a directory that appears in your path.
