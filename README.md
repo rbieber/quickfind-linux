@@ -80,7 +80,10 @@ in a directory that appears in your path.
 After installing the above and the Watcom C compiler and setting up your environment,
 type <CODE>wmake -f Makefile.dos</CODE>.
 
+## License
 
+Quick Find's source code and original project documentation are licensed under
+the [MIT License](LICENSE).
 
-
-
+The third-party review in `DOC/QF302-REVIEW.TXT` is reprinted by permission and
+is not covered by this license grant.

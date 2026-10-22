@@ -1,8 +1,10 @@
+// SPDX-License-Identifier: MIT
+// Licensed under the MIT License. See LICENSE for the full text.
+
 //*****************************************************************************
 //
 // QFTAR.C -- uncompressed V7, USTAR, GNU, and PAX filename searching.
-// Copyright 1989-95 Ronald C. Bieber; All rights reserved.
-// See QF.C for the original copyright and distribution notice.
+// Copyright 1989-95 Ronald C. Bieber.
 //
 //*****************************************************************************
 #include <stdlib.h>

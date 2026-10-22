@@ -1,10 +1,12 @@
+// SPDX-License-Identifier: MIT
+// Licensed under the MIT License. See LICENSE for the full text.
+
 //*****************************************************************************
 //
 // QFARCH.C
 //
 // Bounds-checked Linux archive directory readers. No files are extracted.
-// Copyright 1989-95 Ronald C. Bieber; All rights reserved.
-// See QF.C for the original copyright and distribution notice.
+// Copyright 1989-95 Ronald C. Bieber.
 //
 //*****************************************************************************
 #include <errno.h>

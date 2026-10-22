@@ -1,10 +1,12 @@
+// SPDX-License-Identifier: MIT
+// Licensed under the MIT License. See LICENSE for the full text.
+
 //*****************************************************************************
 //
 // QFLINUX.C
 //
 // Quick Find -- native Linux command line and directory searching.
-// Copyright 1989-95 Ronald C. Bieber; All rights reserved.
-// See QF.C for the original copyright and distribution notice.
+// Copyright 1989-95 Ronald C. Bieber.
 //
 //*****************************************************************************
 #include <ctype.h>
@@ -425,7 +427,7 @@ int main(int argc, char **argv)
       pszRoot[strlen(pszRoot) - 1] = 0;
    if (!(opt.usSwitches & NOFILEINFO))
       printf("Quick File Finder for Linux version %s\n"
-             "Copyright 1989-95 by Ronald C. Bieber; All rights reserved.\n", VERSION);
+             "Copyright 1989-95 by Ronald C. Bieber; MIT License (see LICENSE).\n", VERSION);
    walkdirs(pszRoot);
    free(pszRoot);
    if (!(opt.usSwitches & NOFILEINFO)) {
