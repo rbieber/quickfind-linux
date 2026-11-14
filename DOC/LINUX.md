@@ -63,7 +63,8 @@ accepted because `/` starts an absolute Linux pathname.
 | `-i`, `--ignore-case` | Ignore ASCII case during matching |
 | `--dos-match` | Use the original DOS name/extension and star rules |
 | `--cross-filesystems` | Descend into directories on other filesystem devices |
-| `-h`, `--help` | Display help |
+| `-h`, `--hidden` | Search hidden directories too |
+| `-?`, `--help` | Display help |
 
 Original short options are case-insensitive. An explicit directory overrides
 `-a` and `-c`. Without an explicit directory, the last of `-a`/`-c` wins.
@@ -89,7 +90,10 @@ of that name/extension component. Consequently, `*.*` also matches extensionless
 names, and `a*b.txt` matches `abc.txt`. A question mark still requires a byte;
 it cannot read past the end of a short name.
 
-Directories whose names start with `.` are searched. Directory symlinks
+Directories whose names start with `.` are not descended into by default; use
+`-h` or `--hidden` to include them. An explicitly supplied hidden root is still
+searched. Hidden files and matching hidden directory names can still be listed.
+Directory symlinks
 encountered in the search are never followed; matching symlinks can still be
 listed. The selected root itself must not be a symlink. Ancestor
 device/inode checks prevent bind-mount cycles. By default, descent stays on the

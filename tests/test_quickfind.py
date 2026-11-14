@@ -215,15 +215,38 @@ class QuickFindTests(unittest.TestCase):
                 os.waitpid(iPID, 0)
             os.close(iTerminal)
 
-    def test_recursive_case_and_hidden_directories(self):
-        (self.pathRoot / ".hidden").mkdir()
-        (self.pathRoot / ".hidden" / "Mixed.C").write_text("abc")
+    def test_recursive_case(self):
+        (self.pathRoot / "child").mkdir()
+        (self.pathRoot / "child" / "Mixed.C").write_text("abc")
         (self.pathRoot / "lower.c").write_text("ab")
         proc = self.RunQF("*.C")
         self.assertIn(b"Mixed.C", proc.stdout)
         self.assertNotIn(b"lower.c", proc.stdout)
         proc = self.RunQF("-i", "*.c", "-t", self.pathRoot)
         self.assertIn(b"2 file(s), 0 directory(s), 5 bytes found", proc.stdout)
+
+    def test_hidden_directories(self):
+        (self.pathRoot / ".hidden" / "nested").mkdir(parents=True)
+        (self.pathRoot / ".hidden" / "nested" / "secret.txt").touch()
+        (self.pathRoot / "visible" / ".nested").mkdir(parents=True)
+        (self.pathRoot / "visible" / ".nested" / "another.txt").touch()
+        (self.pathRoot / "visible" / "found.txt").touch()
+        (self.pathRoot / ".file.txt").touch()
+        proc = self.RunQF("-b", "*.txt")
+        self.assertIn(b"found.txt", proc.stdout)
+        self.assertIn(b".file.txt", proc.stdout)
+        self.assertNotIn(b"secret.txt", proc.stdout)
+        self.assertNotIn(b"another.txt", proc.stdout)
+        for szOption in ["--hidden", "-h"]:
+            with self.subTest(szOption=szOption):
+                proc = self.RunQF("-b", "*.txt", szOption)
+                self.assertIn(b"secret.txt", proc.stdout)
+                self.assertIn(b"another.txt", proc.stdout)
+                proc = self.RunQF("-b", "*.txt", envExtra={"QF_OPT": szOption})
+                self.assertIn(b"secret.txt", proc.stdout)
+                self.assertIn(b"another.txt", proc.stdout)
+        proc = self.RunQF("-b", "*.txt", self.pathRoot / ".hidden")
+        self.assertIn(b"secret.txt", proc.stdout)
 
     def test_default_root_and_option_position(self):
         (self.pathRoot / "One.txt").touch()
@@ -247,6 +270,7 @@ class QuickFindTests(unittest.TestCase):
             with self.subTest(aszArgs=aszArgs):
                 self.RunQF(*aszArgs, iExpected=2)
         self.RunQF("--help")
+        self.assertEqual(self.RunQF("-?").stdout, self.RunQF("--help").stdout)
 
     def test_environment_options_are_copied_and_validated(self):
         (self.pathRoot / "MATCH.TXT").touch()

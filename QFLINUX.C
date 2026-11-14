@@ -20,7 +20,7 @@
 
 #include "QFLINUX.H"
 
-OPTIONS opt = { 0, FALSE, FALSE, FALSE, NULL, NULL };
+OPTIONS opt = { 0, FALSE, FALSE, FALSE, FALSE, NULL, NULL };
 TOTALS totals = { 0, 0, 0 };
 volatile sig_atomic_t bInterrupted = 0;
 BOOL bError = FALSE;
@@ -47,9 +47,10 @@ static void usage(void)
         "  -p, --pause             Pause terminal output every 24 lines\n"
         "  -t, --totals            Show totals for each directory\n"
         "  -i, --ignore-case       Match without regard to ASCII letter case\n"
+        "  -h, --hidden            Search hidden directories too\n"
         "      --dos-match         Use DOS name/extension and '*' rules\n"
         "      --cross-filesystems Traverse mounted filesystems too\n"
-        "  -h, --help              Display this help\n"
+        "  -?, --help              Display this help\n"
         "      --                 End option processing\n\n"
         "Quote patterns such as '*.c' so the shell does not expand them.\n"
         "An explicit directory overrides -a/-c. Symlinks are not traversed.\n"
@@ -62,7 +63,7 @@ static void usage(void)
 static int ParseOption(const char *pszOption, BOOL bEnvironment)
 {
    // Keep the original short switches, including -CF and -CO.
-   if (!strcmp(pszOption, "--help") || !strcmp(pszOption, "-h") ||
+   if (!strcmp(pszOption, "--help") ||
        !strcmp(pszOption, "-?")) {
       if (bEnvironment) {
          ReportError("QF_OPT", "help is only accepted on the command line");
@@ -103,6 +104,8 @@ static int ParseOption(const char *pszOption, BOOL bEnvironment)
       opt.bDOSMatch = TRUE;
    else if (!strcmp(pszOption, "--cross-filesystems"))
       opt.bCrossFilesystems = TRUE;
+   else if (!strcmp(pszOption, "--hidden") || !strcasecmp(pszOption, "-h"))
+      opt.bHidden = TRUE;
    else {
       ReportError(pszOption, "unknown option");
       return (-1);
@@ -354,6 +357,7 @@ static void walkdirs(const char *pszRoot)
          continue;
       }
       if (!S_ISDIR(stDirectory.st_mode) ||
+          (!opt.bHidden && pde->d_name[0] == '.') ||
           (!opt.bCrossFilesystems && stDirectory.st_dev != stRoot.st_dev))
          continue;
       // Bind mounts can form cycles even when no symlinks are followed.

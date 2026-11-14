@@ -25,7 +25,8 @@ Searches start in the current directory unless a directory is supplied. Quote
 wildcards. Linux options start with `-` or `--`; absolute directory paths are
 accepted without being mistaken for DOS switches. Matching preserves case by
 default; `-i` ignores ASCII case, and `--dos-match` selects the old DOS matching
-rules. Archive members are listed without extraction.
+rules. Hidden directories are not descended into by default; `--hidden` (`-h`)
+includes them. Archive members are listed without extraction.
 
 Supported extensions are ARC, PAK, ZIP, ZOO, DWC, LZH, LZS, ARJ, CAB, RAR
 (RAR4 format), and TAR. TAR support covers uncompressed V7/USTAR, GNU long

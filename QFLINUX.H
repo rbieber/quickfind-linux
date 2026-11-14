@@ -50,6 +50,7 @@ typedef struct tagOPTIONS {
    BOOL bIgnoreCase;
    BOOL bDOSMatch;
    BOOL bCrossFilesystems;
+   BOOL bHidden;
    const char *pszPattern;
    const char *pszRoot;
 } OPTIONS;
